@@ -1,0 +1,30 @@
+name: Upload Website to S3
+on:
+  push:
+    branches:
+      - frontend
+  pull_request:
+    branches:
+      -frontend
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        ref: frontend
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secretes.AWS_REGION }}
+
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./ s3://${{ secretes.AWS_S3_BUCKET }} --delete --exclude ".*"
+
+    - name: Invalidate CloudFront Cache
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} --paths "/*"
