@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Sameer Jain | Cloud Engineer | sameerjain.50@gmail.com</title>
+	<link rel="shortcut icon" type="image/jpg" href="https://dw406ghfvslry.cloudfront.net/media/images/favicon.png"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://dw406ghfvslry.cloudfront.net/css/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="https://dw406ghfvslry.cloudfront.net/css/resume.css" media="all" />
+
+</head>
+<body>
+
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+					<h1>Sameer Jain</h1>
+					<h2>Cloud Engineer</h2>
+				</div>
+
+				<div class="yui-u">
+					<div class="contact-info">
+						<h3><a href="mailto:sameerjain.50@gmail.com">sameerjain.50@gmail.com</a></h3>
+						<h3>0411 656 771</h3>
+						
+						
+						<a href="https://www.github.com/SJ50" target="_blank"><i class="fab fa-github" style="font-size:24px;color:black"></i></a>
+						<!--
+						<a href="https://www.linkedin.com/in/sameerjain50/" target="_blank"><i class="fab fa-linkedin" style="font-size:24px;color:black"></i></a>
+						-->
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Profile</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+
+							<div class="profile last">
+								<h4>I am Highly Motivated, a quick study Structural Engineer with invaluable experience leading, mentoring and developing Engineering professionals. I am a Certified AWS Solution Architect Associate who wants to transition his career into Cloud-based technologies and has experience in implementing the following.</h4>
+								
+								
+								<ul>
+									<li>Migrating monolithic web server in AWS after rearcitecting it (using EC2 or ECS, RDS or Aurora, EFS)</li>
+									<li>Hybrid Cloud using Site-to-Site VPN, Active Directory, SSO and DNS (Route 53 and on-premise DNS) and Systems Manager for managing, maintaining and patching hybrid environment</li>
+									<li>Serverless Application Design (API Gateway, Lambda, DynamoDB, Step Function, SQS and SNS) </li>
+									<li>WebIdentity Federation (Cognito)</li>
+								</ul>
+							</div>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+					
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Projects</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+
+							<div class="job">
+								<h2>Migrating Monolithic Web Server in AWS</h2>
+								<h3>Migrated and replatform monolithic Wordpress web server from on-premise to AWS.</h3>
+								<p> </p>
+								<ul>
+									<li>Evolving a single instance Wordpress App, to highly available 3 tier (Front End, App, DB) App using Amazon EC2 and using Auto-Scaling groups with an Application Load Balancer</li>
+									<li>Migrated static content initially to EFS</li>
+									<li>On premise database migrated using DMS to RDS and to finally Aurora MySql</li>
+									<li>Cloud front distribution with path based behaviour for caching and accelerated global availability, used Custom Header to secure the origin</li>
+									<li>Used ACM for SSL certificate to implement secure end to end connection. </li>
+								</ul>
+							</div>
+							<div class="job">
+								<h2>Hybrid Cloud environment</h2>
+								<h3>Set up a Hybrid cloud Environment with Site-to-Site VPN connectivity for SSO, DNS resolution and on-premise server management.</h3>
+								<p> </p>
+								<ul>
+									<li>Did this by simulating the on-prem environment on EC2 instances. Set up VPN connections from AWS endpoints to on-prem Customer Gateways. Created IPsec tunnels for the VPN connections. Set up BGP routing so routes can be exchanged for the Transit Gateway that was used.</li> 
+									<li>Created Active Directory in AWS and setup two way trust between on-premise AD to AWS AD for SSO implementation.</li>
+									<li>Implemented Inbound and Outbound Endpoint with forwarding rules to resolve DNS from on-premise to AWS and vice versa.</li> 
+									<li>Installed SSM Agent in on-premise server to manage and patch-management using SSM.</li>
+								</ul>
+							</div>
+							<div class="job last">
+								<h2>AWS Resume Website Challenge</h2>
+								<h3>Serverless website using multiple AWS Services</h3>
+								<p> </p>
+								<ul>
+									<li>Front-End Static S3 website on CloudFront S3 website endpoint to use HTTPS, built with raw HTML/CSS. JS used to make the API call for the site counter. Route53 record sets to redirect to custom url and to use www. address.
+									<li>Back-End API Gateway triggers the Python Lambda Function to update the atomic counter stored in DynamoDB. These resources were all built using AWS SAM and Cloudformation using templates written in YAML.</li>
+									<li>CI/CD Pushing a new update into the Github repo, triggers a Github Action. It then runs a Python test on the Lambda Function to test for a "200" response, if it passes, Cloudformation then updates all the resources (S3, API Gateway, Lambda, DynamoDB), and thus delivers this updated website. This is set up for both front-end and back-end github pushes.</li>
+								</ul>
+							</div>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Professional Experiance</h2>
+						</div>
+
+						<div class="yui-u">
+
+							<div class="job">
+								<h2>Xavieer Knight - Sydney</h2>
+								<h3>Structural Engineer</h3>
+								<h4>MAR 2018 - Current</h4>
+								<p> </p>
+								<ul>
+									<li>Analyze and design Residential and Commercial building structures using RAM Concept</li>
+									<li>Design of Post-Tensioned structures in accordance with AS-3600. </li>
+									<li>Prepare design calculations, drawings, specifications, design analysis</li>
+									<li>Flexible team member who is most effective in a fast-paced work environment. </li>
+								</ul>
+							</div>
+
+							<div class="job last">
+								<h2>Freyssinet-Menard India Pvt. Ltd. - India </h2>
+								<h3>Senior Structural Engineer</h3>
+								<h4>DEC 2011 - FEB 2018</h4>
+								<p> </p>
+								<ul>
+									<li>Analyze and design Residential and Commercial building structures using Adapt-Builder, RAM Concept and ETABS software.</li>
+									<li>Design of Post-Tensioned structures in accordance with IS-456, IS-1348, ACI-318.</li>
+									<li>Prepare design calculations, drawings, specifications, design analysis.</li>
+									<li>Liaising with Structural consultant and Architect to understand their requirements.</li>
+								</ul>
+							</div>
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf-->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Certificates</h2>
+						</div>
+						<div class="yui-u">
+							<a href="https://www.credly.com/badges/8e0b7166-13f8-4b5a-82fa-1456b40da6a5" target="_blank">
+							<img alt=""  src="https://images.credly.com/images/4bc21d8b-4afe-4fbd-9a90-a9de8bf7b240/AWS-SolArchitect-Associate-2020.png" width="110" height="110" style="height:auto;line-height:100%;outline:none;text-decoration:none;border:0 none" class="CToWUd">
+							</a>	
+						</div>
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Education</h2>
+						</div>
+						<div class="yui-u">
+							<div class='job'>
+							<h2>University Of Technology Sydney, Sydney </h2>
+							<h3>Master of Engineering Management</h3>
+							<h4>2009</h4>
+							</div>
+							<div class='job'>
+							<h2>University Of Technology Sydney, Sydney </h2>
+							<h3>Master of Engineering Studies</h3>
+							<h4>2008</h4>
+							</div>
+							<div class='job last'>
+							<h2>The Maharaja Sayajirao University of Baroda, India</h2>
+							<h3>Bachelor of Engineering (Civil)</h3>
+							<h4>2002 - 2006</h4>
+							</div>
+						</div>
+					</div><!--// .yui-gf -->
+					
+					<div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Skills</h2>
+						</div>
+						<div class="yui-u">
+							<ul class="talent">
+								<li>Bash</li>
+								<li>Python</li>
+								<li>Terraform</li>
+							</ul>
+
+							<ul class="talent">
+								<li>Docker/Docker-Compose</li>
+								<li>Linux</li>
+								<li>Git</li>
+							</ul>
+
+							<ul class="talent ">
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JavaScript</li>
+							</ul>
+						</div>
+					</div><!--// .yui-gf-->
+
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+		<div id="ft">
+			<p>Sameer Jain &mdash; <a href="mailto:sameerjain.50@gmail.com">sameerjain.50@gmail.com</a> &mdash; 0411 656 771 &mdash; Visits: <span id="visits"></span> <script src="https://dw406ghfvslry.cloudfront.net/javascript/api.js"></script></p>
+			 
+		</div><!--// footer -->
+
+	</div><!-- // inner -->
+
+
+</div><!--// doc -->
+
+
+</body>
+</html>
+
