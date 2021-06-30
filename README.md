@@ -1,2 +1,2 @@
-# cloud-resume-challange-frontend
-Frontend of cloudresume challenge.
+# cloud-resume-challange
+Backend of cloudresume challenge.

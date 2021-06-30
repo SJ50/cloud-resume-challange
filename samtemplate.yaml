@@ -1,0 +1,63 @@
+# SAM FILE
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: The resume challenge, create Lambda, DynamoDB Table and apiGateway.
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  VisitorCounterFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: VisitorsCountSAM
+      Handler: update-visitorscounter.lambda_handler
+      Runtime: python3.8
+      CodeUri: Lambda/
+      Description: A starter AWS Lambda function.
+      MemorySize: 128
+      Timeout: 3
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref DynamoDBTable
+          REGION_NAME: !Ref AWS::Region
+      Events:
+        # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        VisitorsCountSAMAPI:
+          Type: Api 
+          Properties:
+            Path: /count
+            Method: GET
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref DynamoDBTable  
+
+  DynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: VisitorsCountSAM
+      AttributeDefinitions:
+        - AttributeName: SiteURL
+          AttributeType: S
+      KeySchema:
+        - AttributeName: SiteURL
+          KeyType: HASH  
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  GetVisitorCountApi:
+    Description: "API Gateway endpoint URL for Prod stage for Visitor Count function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/count/"
+  GetVisitorCounterFunction:
+    Description: "Visitor Count Lambda Function ARN"
+    Value: !GetAtt VisitorCounterFunction.Arn
+  GetVisitorCounterFunctionIamRole:
+    Description: "Implicit IAM Role created for Visitor Count function"
+    Value: !GetAtt VisitorCounterFunctionRole.Arn
