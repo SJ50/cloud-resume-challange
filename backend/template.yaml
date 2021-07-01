@@ -39,11 +39,25 @@ Resources:
     Properties:
       TableName: VisitorsCountSAM
       AttributeDefinitions:
-        - AttributeName: SiteURL
+        - 
+          AttributeName: Country
           AttributeType: S
+        - 
+          AttributeName: IP
+          AttributeType: S
+        -
+          AttributeName: LastVisitTime
+          AttributeType: S
+        - 
+          AttributeName: VisitorsCount
+          AttributeType: N
       KeySchema:
-        - AttributeName: SiteURL
-          KeyType: HASH  
+        - 
+          AttributeName: Country
+          KeyType: "HASH"
+        - 
+          AttributeName: IP
+          KeyType: "RANGE"  
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
